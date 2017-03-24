@@ -12,17 +12,9 @@ import com.example.mobsoft.mobsoftlab3.ui.Presenter;
 
 public class MainPresenter extends Presenter<MainScreen> {
 
-   // private MainPresenter instance = null;
 
     public MainPresenter() {
     }
-
- //   public MainPresenter getInstance() {
- //       if (instance == null) {
- //           instance = new MainPresenter();
-  //      }
-  //      return instance;
- //   }
 
     @Override
     public void attachScreen(MainScreen screen) {
@@ -33,4 +25,6 @@ public class MainPresenter extends Presenter<MainScreen> {
     public void detachScreen() {
         super.detachScreen();
     }
+
+    public void showEventList(){}
 }

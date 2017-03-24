@@ -9,17 +9,8 @@ import com.example.mobsoft.mobsoftlab3.ui.main.MainScreen;
 
 public class JoinEventPresenter extends Presenter<JoinEventScreen> {
 
-    // private MainPresenter instance = null;
-
     public JoinEventPresenter() {
     }
-
-    //   public MainPresenter getInstance() {
-    //       if (instance == null) {
-    //           instance = new MainPresenter();
-    //      }
-    //      return instance;
-    //   }
 
     @Override
     public void attachScreen(JoinEventScreen screen) {
@@ -30,4 +21,6 @@ public class JoinEventPresenter extends Presenter<JoinEventScreen> {
     public void detachScreen() {
         super.detachScreen();
     }
+
+    public void joinEvent(String name, String phone, String role){}
 }

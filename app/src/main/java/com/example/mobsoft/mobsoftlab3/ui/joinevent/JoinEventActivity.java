@@ -2,6 +2,7 @@ package com.example.mobsoft.mobsoftlab3.ui.joinevent;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.widget.Toast;
 
 import com.example.mobsoft.mobsoftlab3.MobSoftApplication;
@@ -38,4 +39,9 @@ public class JoinEventActivity  extends AppCompatActivity implements JoinEventSc
     public void showMessage(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void joinEvent(String name, String Phone, String role){}
+
+    public void showEventDetails(String eventName, String eventPlace, String[] eventRoles){}
 }
