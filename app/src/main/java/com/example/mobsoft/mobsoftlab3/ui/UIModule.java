@@ -12,6 +12,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import com.example.mobsoft.mobsoftlab3.ui.main.MainPresenter;
+import com.example.mobsoft.mobsoftlab3.ui.joinevent.JoinEventPresenter;
 
 @Module
 public class UIModule {
@@ -30,6 +31,12 @@ public class UIModule {
     @Singleton
     public MainPresenter provideMainPresenter() {
         return new MainPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public JoinEventPresenter provideJoinEventPresenter() {
+        return new JoinEventPresenter();
     }
 
 }
