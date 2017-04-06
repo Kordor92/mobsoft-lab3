@@ -26,5 +26,5 @@ public class MainPresenter extends Presenter<MainScreen> {
         super.detachScreen();
     }
 
-    public void showEventList(){}
+    public void navigate(int nextScreen){}
 }

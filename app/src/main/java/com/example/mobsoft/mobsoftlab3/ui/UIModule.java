@@ -13,6 +13,8 @@ import dagger.Module;
 import dagger.Provides;
 import com.example.mobsoft.mobsoftlab3.ui.main.MainPresenter;
 import com.example.mobsoft.mobsoftlab3.ui.joinevent.JoinEventPresenter;
+import com.example.mobsoft.mobsoftlab3.ui.events.EventPresenter;
+import com.example.mobsoft.mobsoftlab3.ui.createevent.CreateEventPresenter;
 
 @Module
 public class UIModule {
@@ -37,6 +39,20 @@ public class UIModule {
     @Singleton
     public JoinEventPresenter provideJoinEventPresenter() {
         return new JoinEventPresenter();
+    }
+	
+	
+	@Provides
+    @Singleton
+    public EventPresenter provideEventPresenter() {
+        return new EventPresenter();
+    }
+	
+	
+	@Provides
+    @Singleton
+    public CreateEventPresenter provideCreateEventPresenter() {
+        return new CreateEventPresenter();
     }
 
 }

@@ -8,5 +8,36 @@ import com.example.mobsoft.mobsoftlab3.R;
 
 import javax.inject.Inject;
 
-public class CreateEventActivity {
+public class CreateEventActivity extends AppCompatActivity implements CreateEventScreen{
+	
+	@Inject
+    CreateEventPresenter createEventPresenter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MobSoftApplication.injector.inject(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        createEventPresenter.attachScreen(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        createEventPresenter.detachScreen();
+    }
+
+
+    @Override
+    public void showMessage(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+	
+	@Override
+	public void createEvent(String name, String place, List<String> prerequisites){}
+	
 }

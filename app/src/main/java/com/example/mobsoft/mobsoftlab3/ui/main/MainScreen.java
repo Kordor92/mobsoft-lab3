@@ -11,6 +11,6 @@ package com.example.mobsoft.mobsoftlab3.ui.main;
 
 public interface MainScreen {
     void showMessage(String text);
-
+	void navigate(int nextScreen);
 
 }

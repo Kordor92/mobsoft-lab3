@@ -5,4 +5,6 @@ package com.example.mobsoft.mobsoftlab3.ui.createevent;
  */
 
 public interface CreateEventScreen {
+	void showMessage(String text);
+	void createEvent(String name, String place, List<String> prerequisites);
 }

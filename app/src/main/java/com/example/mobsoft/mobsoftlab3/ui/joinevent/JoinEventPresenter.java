@@ -12,7 +12,7 @@ public class JoinEventPresenter extends Presenter<JoinEventScreen> {
     public JoinEventPresenter() {
     }
 
-    @Override
+	@Override
     public void attachScreen(JoinEventScreen screen) {
         super.attachScreen(screen);
     }
@@ -21,6 +21,9 @@ public class JoinEventPresenter extends Presenter<JoinEventScreen> {
     public void detachScreen() {
         super.detachScreen();
     }
-
+	
     public void joinEvent(String name, String phone, String role){}
+	
+	
+    public void showEventDetails(String eventName, String eventPlace, String[] eventRoles){}
 }
