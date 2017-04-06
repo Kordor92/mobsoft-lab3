@@ -1,5 +1,6 @@
 package com.example.mobsoft.mobsoftlab3.ui.events;
 
+import com.example.mobsoft.mobsoftlab3.ui.Presenter;
 /**
  * Created by mobsoft on 2017. 03. 24..
  */
