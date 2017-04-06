@@ -43,5 +43,5 @@ public class JoinEventActivity  extends AppCompatActivity implements JoinEventSc
     @Override
     public void joinEvent(String name, String Phone, String role){}
 	@Override
-	void showEventDetails(String eventName, String eventPlace, String[] eventRoles);
+	public void showEventDetails(String eventName, String eventPlace, String[] eventRoles);
 }
