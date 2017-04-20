@@ -7,15 +7,21 @@ import android.widget.Toast;
 
 import com.example.mobsoft.mobsoftlab3.MobSoftApplication;
 import com.example.mobsoft.mobsoftlab3.R;
+import com.example.mobsoft.mobsoftlab3.interactor.eventinteractor.EventInteractor;
 import com.example.mobsoft.mobsoftlab3.ui.joinevent.JoinEventPresenter;
 import com.example.mobsoft.mobsoftlab3.ui.main.MainScreen;
 
+import java.util.concurrent.Executor;
+
 import javax.inject.Inject;
+
+import de.greenrobot.event.EventBus;
 
 
 public class JoinEventActivity  extends AppCompatActivity implements JoinEventScreen {
     @Inject
     JoinEventPresenter joinEventPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
