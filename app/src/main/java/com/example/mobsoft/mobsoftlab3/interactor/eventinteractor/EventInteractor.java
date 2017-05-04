@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 import de.greenrobot.event.EventBus;
+
+import com.example.mobsoft.mobsoftlab3.io.swagger.client.api.DefaultApi;
 import com.example.mobsoft.mobsoftlab3.repository.Repository;
 import com.example.mobsoft.mobsoftlab3.MobSoftApplication;
 import com.example.mobsoft.mobsoftlab3.interactor.eventinteractor.events.*;
@@ -17,6 +19,8 @@ public class EventInteractor {
     Repository repository;
     @Inject
     EventBus bus;
+    @Inject
+    DefaultApi defaultApi;
 
     public EventInteractor() {
         MobSoftApplication.injector.inject(this);
@@ -26,6 +30,7 @@ public class EventInteractor {
         GetEventListEvent event = new GetEventListEvent();
         try {
             List<Event> events = repository.getEvents();
+            defaultApi.eventAllGet();
             event.setEvents(events);
             bus.post(event);
         } catch (Exception e) {
@@ -38,6 +43,7 @@ public class EventInteractor {
         GetMyEventsEvent event = new GetMyEventsEvent();
         try {
             List<Event> events = repository.getMyEvents();
+            defaultApi.eventMyGet();
             event.setEvents(events);
             bus.post(event);
         } catch (Exception e) {
@@ -52,6 +58,7 @@ public class EventInteractor {
         JoinEventEvent event = new JoinEventEvent();
         event.setEvent(ev);
         try {
+            defaultApi.eventJoinPost(ev.getEventID(),ev.getName(),ev.getLocation());
             repository.joinEvent(ev);
             bus.post(event);
         } catch (Exception e) {
@@ -64,7 +71,7 @@ public class EventInteractor {
 
         LeaveEventEvent event = new LeaveEventEvent();
         event.setEvent(ev);
-        try {
+        try{
             repository.leaveEvent(ev);
             bus.post(event);
         } catch (Exception e) {
